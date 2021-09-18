@@ -1,7 +1,7 @@
 # databaseListFormatter
-A nifty tool writen in js. 
 Returns a list formatted for the IN operator for SQL queries. 
-A nifty tool that comes in handy if you write a lot of sql. 
+A nifty tool writen in js. 
+Comes in handy if you write a lot of sql. 
 
 <h2>Example</h2>
 <img src="https://martinssonfredrik.se/git/ezgif-2-5984e9f43f36.gif">
