@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Database list formatter</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <div class="center-container">
+        <div class="container-white">
+            <h1>Database list formatter</h1>
+            <p>Returns a list formatted for the IN operator for SQL queries. </p> <a href="#" id="show-example">Show
+                example</a><br><br>
+
+            <div id="how-to" class="hidden-div"><img src="ezgif-2-5984e9f43f36.gif" alt="An example of the site"></div>
+
+
+        </div>
+
+
+        <div class="container">
+
+            <textarea id="text-format" placeholder="Paste or write here..."></textarea>
+
+            <input type="hidden" id="text-format-copy">
+
+            <br>
+
+            <input type="radio" name="input-typ" value="string" checked><label>Strings</label>
+            <input type="radio" name="input-typ" value="number"><label>Numbers</label>
+            <br>
+            <button id="buton-format">Format</button>
+            <button id="buton-format-copy">Format and copy</button>
+            <button id="buton-clear" class="btn-clear">Clear all</button>
+
+        </div>
+        <div class="row">
+            <div class="column">
+                <h2>Result</h2>
+            </div>
+            <div class="column" id="fade-out">
+
+            </div>
+        </div>
+
+        <div id="result-formater" class="container-result">
+
+
+        </div>
+    </div>
+
+
+    <script src="formater.js"></script>
+</body>
+
+</html>
