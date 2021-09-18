@@ -4,7 +4,7 @@ A nifty tool writen in js.
 Comes in handy if you write a lot of sql. 
 
 <h2>Example</h2>
-<img src="https://martinssonfredrik.se/git/ezgif-2-5984e9f43f36.gif">
+<img src="https://github.com/figg3/databaseListFormatter/blob/main/ezgif-2-5984e9f43f36.gif">
 
 
 <h2>Live Demo</h2>
