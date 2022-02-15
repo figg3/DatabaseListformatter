@@ -92,13 +92,26 @@ button:hover {
 
 .container-result {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: #6e7785;
   padding: 20px;
   width: 100%;
   max-width: 800px;
   word-wrap: break-word;
   white-space: pre
 }
+
+.green-text {
+  color: rgb(7, 218, 7);
+}
+
+.orange-text {
+  color: rgb(228, 228, 34)
+}
+
+.seporator{
+  color: rgb(201, 45, 201)
+}
+
 
 .copy-fadeinout {
   color: #4caf50;
