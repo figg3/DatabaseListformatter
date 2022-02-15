@@ -2,10 +2,15 @@ const butonFormat = document.querySelector('#buton-format');
 const butonFormatCopy = document.querySelector('#buton-format-copy');
 const butonClear = document.querySelector('#buton-clear');
 const hidelink = document.querySelector('#show-example');
+const darkmode = document.querySelector('#set-darkmode');
+const textContainer = document.querySelector('#text-container')
 let howTo = document.querySelector('#how-to');
 let result = document.querySelector("#result-formater");
 let dataToFormat = document.querySelector("#text-format");
 
+
+
+// main function
 const formatData = function (copy) {
     let resultArray = [];
     let valueAsArray = dataToFormat.value.trim().split('\n'); 
@@ -62,7 +67,7 @@ const formatData = function (copy) {
             result.append("\xA0\xA0\xA0\xA0\xA0", orangeText, separator, "\n")
     });
 
-
+    // Handle the copy the result
     if (copy !== undefined) {
 
         const columnCopied = document.querySelector('#fade-out')
@@ -86,24 +91,39 @@ const formatData = function (copy) {
     }
 }
 
+// the format button
 butonFormat.addEventListener('click', function () {
     formatData();
 })
 
+// Copy button 
 butonFormatCopy.addEventListener('click', function () {
     formatData('copy');
 })
 
+// clear button 
 butonClear.addEventListener('click', function () {
     result.innerHTML = '';
     dataToFormat.value = '';
-
 })
 
+// click function for showing the demo
 hidelink.addEventListener('click', function () {
-    if (howTo.className == 'hidden-div') {
+    if (howTo.className == 'hidden-div')
         howTo.className = 'not-hidden-div'
-    } else {
+     else 
         howTo.className = 'hidden-div'
+})
+
+// darkmode click function
+darkmode.addEventListener('click', function () {
+    if (textContainer.className == 'container-dark-mode') {
+        document.body.className = ''
+        textContainer.className = 'container-white'
+        darkmode.text = "Dark Mode"
+    } else {
+        document.body.className = 'dark-mode'
+        textContainer.className = 'container-dark-mode'
+        darkmode.text = "Light Mode"      
     }
 })
