@@ -38,7 +38,7 @@ a:active {
 input[type="text"],
 select,
 textarea {
-  width: 100%;
+  width: 97%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -79,6 +79,7 @@ button:hover {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
+  width: 100%;
   max-width: 800px;
 }
 
@@ -96,6 +97,7 @@ button:hover {
   width: 100%;
   max-width: 800px;
   word-wrap: break-word;
+  white-space: pre
 }
 
 .copy-fadeinout {

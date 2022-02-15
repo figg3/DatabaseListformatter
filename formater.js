@@ -5,7 +5,6 @@ const hidelink = document.querySelector('#show-example');
 let howTo = document.querySelector('#how-to');
 let result = document.querySelector("#result-formater");
 let dataToFormat = document.querySelector("#text-format");
-let textCopy = document.querySelector('#text-format-copy');
 
 const formatData = function (copy) {
     let resultArray = [];
@@ -16,32 +15,44 @@ const formatData = function (copy) {
     valueAsArray.forEach(function (element) {
 
         if (inputType == 'string') {
-            resultArray.push(`'${element}'`);
+            resultArray.push(`'${element.trim()}'`);
         } else {
-            resultArray.push(element);
+            resultArray.push(element.trim());
         }
     })
 
-    let finalResult = `in (${resultArray.toString()})`
-    result.append(finalResult);
+    let counter = 0;
+    let length = resultArray.length;    
+
+    resultArray.forEach(element => {
+        counter++;
+        if( counter == 1)
+            if(counter == length)
+                result.append(`\xA0\in (${element})\n`)
+                else
+                result.append(`\xA0\in (${element},\n`)
+        else if (length == counter)
+            result.append(`\xA0\xA0\xA0\xA0\xA0${element})\n`) 
+        else
+            result.append(`\xA0\xA0\xA0\xA0\xA0${element},\n`)
+    });
+
 
     if (copy !== undefined) {
 
         const columnCopied = document.querySelector('#fade-out')
         const copiedElement = document.createElement('h2');
-
         const checkBeforeRemove = document.querySelector('.copy-fadeinout');
 
         if (checkBeforeRemove !== null) {
             checkBeforeRemove.remove()
         }
 
-        textCopy.type = 'text';
-        textCopy.value = finalResult;
-        textCopy.select();
-        textCopy.setSelectionRange(0, 99999);
+        let range = document.createRange();
+        range.selectNode(result); 
+        window.getSelection().removeAllRanges(); 
+        window.getSelection().addRange(range); 
         document.execCommand("copy");
-        textCopy.type = 'hidden';
 
         copiedElement.innerHTML = 'Copied'
         copiedElement.className = 'copy-fadeinout'
@@ -65,9 +76,9 @@ butonClear.addEventListener('click', function () {
 })
 
 hidelink.addEventListener('click', function () {
-    if(howTo.className == 'hidden-div') {
+    if (howTo.className == 'hidden-div') {
         howTo.className = 'not-hidden-div'
-    }else{
+    } else {
         howTo.className = 'hidden-div'
     }
 })
