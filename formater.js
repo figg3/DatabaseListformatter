@@ -3,7 +3,8 @@ const butonFormatCopy = document.querySelector('#buton-format-copy');
 const butonClear = document.querySelector('#buton-clear');
 const hidelink = document.querySelector('#show-example');
 const darkmode = document.querySelector('#set-darkmode');
-const textContainer = document.querySelector('#text-container')
+const textContainer = document.querySelector('#text-container');
+const inputContainer = document.querySelector('#input-container');
 const textArea = document.querySelector('#text-format');
 let howTo = document.querySelector('#how-to');
 let result = document.querySelector("#result-formater");
@@ -130,6 +131,7 @@ darkmode.addEventListener('click', function () {
 function setMode(mode) { 
         document.body.className = `${mode}-mode`;
         textContainer.className = `container-${mode}`
+        inputContainer.className = `container-light-${mode}`
         textArea.className = `${mode}-textbox`;
         document.cookie = `mode=${mode}`; 
             if(mode == 'light')
