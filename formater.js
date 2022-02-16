@@ -117,13 +117,33 @@ hidelink.addEventListener('click', function () {
 
 // darkmode click function
 darkmode.addEventListener('click', function () {
-    if (textContainer.className == 'container-dark-mode') {
-        document.body.className = ''
-        textContainer.className = 'container-white'
-        darkmode.text = "Dark Mode"
-    } else {
-        document.body.className = 'dark-mode'
-        textContainer.className = 'container-dark-mode'
-        darkmode.text = "Light Mode"      
-    }
+
+    if(textContainer.className == 'container-dark')
+        setMode("light")
+        else
+        setMode("dark")
+
 })
+
+// Set the darkmode
+function setMode(mode) { 
+        document.body.className = `${mode}-mode`;
+        textContainer.className = `container-${mode}`
+        document.cookie = `mode=${mode}`; 
+            if(mode == 'light')
+                darkmode.text = `dark mode`
+            else
+            darkmode.text = `light mode`        
+}
+
+// Check if there is a cookie
+function checkCookieName(name) 
+    {
+      let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      if (match) {
+       return match[2];
+      }
+      else{
+           return 'light';
+      }
+   }
