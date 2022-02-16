@@ -15,9 +15,19 @@ let dataToFormat = document.querySelector("#text-format");
 // main function
 const formatData = function (copy) {
     let resultArray = [];
-    let valueAsArray = dataToFormat.value.trim().split('\n'); 
+    let valueAsArray = "";
     let inputType = document.querySelector('input[name="input-typ"]:checked').value;
     result.innerHTML = '';
+
+        // Use split based on selected separator
+        let inputBreak = document.querySelector('input[name="input-typ-lb"]:checked').value;
+        if(inputBreak == 'lb')
+            valueAsArray = dataToFormat.value.trim().split('\n'); 
+        else if(inputBreak == 'space')
+            valueAsArray = dataToFormat.value.trim().split(' '); 
+        else
+            valueAsArray = dataToFormat.value.trim().split(/\n| /); 
+
 
     // loop the values if the array, treating them differently based on type (string or int)
     valueAsArray.forEach(element => {
@@ -133,6 +143,7 @@ function setMode(mode) {
         textContainer.className = `container-${mode}`
         inputContainer.className = `container-light-${mode}`
         textArea.className = `${mode}-textbox`;
+        result.className = `container-result-${mode}`
         document.cookie = `mode=${mode}`; 
             if(mode == 'light')
                 darkmode.text = `dark mode`

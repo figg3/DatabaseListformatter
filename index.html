@@ -13,12 +13,13 @@
     <div class="center-container">
         <div class="container-white" id="text-container">
             <h1>Database list formatter</h1>
+    
             <p>Returns a list formatted for the IN operator for SQL queries. </p> 
             <p><i>This site uses cookies, Mmmm Cookies! <br>
             They are only used to keep track if you chosen dark or light mode. </i></p>
-            
+  
             <a href="#" id="show-example">Show
-                example</a> <a href="https://github.com/figg3/databaseListFormatter">Check out on GitHub</a> 
+                example</a> 
                 <a href="#" id="set-darkmode" class="dark-mode-link">dark mode</a>  
          
                 <br><br>
@@ -34,9 +35,14 @@
             <textarea id="text-format" placeholder="Paste or write here..."></textarea>
 
             <br>
-
+            <b>Output: </b>
             <input type="radio" name="input-typ" value="string" checked><label>Strings</label>
             <input type="radio" name="input-typ" value="number"><label>Numbers</label>
+            <!-- Added to handle where to do the split -->
+            <b>Split with:</b>
+            <input type="radio" name="input-typ-lb" value="lb" checked><label>Linebreak</label>
+            <input type="radio" name="input-typ-lb" value="space"><label>Space</label>
+            <input type="radio" name="input-typ-lb" value="lbspace"><label>Space & linebreak</label>
             <br>
             <button id="buton-format">Format</button>
             <button id="buton-format-copy">Format and copy</button>
@@ -44,18 +50,23 @@
 
         </div>
         <div class="row">
+            
             <div class="column">
-                <h2>Result</h2>
+                <h2>Output</h2>                
             </div>
-            <div class="column" id="fade-out">
-
-            </div>
+            
+            <div class="column" id="fade-out"></div>
+          
         </div>
 
-        <div id="result-formater" class="container-result">
+        <div id="result-formater" class="container-result" id="output-result">
 
 
         </div>
+<br>
+        <a href="https://github.com/figg3/databaseListFormatter">
+        <img src="GitHub-Mark-32px.png" alt="GitHub">
+        </a>
     </div>
 
 
