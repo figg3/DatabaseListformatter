@@ -9,6 +9,16 @@ body {
   background-color: rgb(72, 73, 72);
 }
 
+.dark-textbox {
+  background-color:rgb(72, 73, 72);
+  color: #e9e9e9;
+}
+
+.white-textbox {
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
 .white-mode{
   background-color: rgb(255, 255, 255);
 }

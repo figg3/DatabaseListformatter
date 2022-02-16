@@ -4,6 +4,7 @@ const butonClear = document.querySelector('#buton-clear');
 const hidelink = document.querySelector('#show-example');
 const darkmode = document.querySelector('#set-darkmode');
 const textContainer = document.querySelector('#text-container')
+const textArea = document.querySelector('#text-format');
 let howTo = document.querySelector('#how-to');
 let result = document.querySelector("#result-formater");
 let dataToFormat = document.querySelector("#text-format");
@@ -129,6 +130,7 @@ darkmode.addEventListener('click', function () {
 function setMode(mode) { 
         document.body.className = `${mode}-mode`;
         textContainer.className = `container-${mode}`
+        textArea.className = `${mode}-textbox`;
         document.cookie = `mode=${mode}`; 
             if(mode == 'light')
                 darkmode.text = `dark mode`
