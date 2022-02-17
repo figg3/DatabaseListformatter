@@ -31,21 +31,23 @@ const formatData = function (copy) {
 
     // loop the values in the array, treating them differently based on type (string or int). Ignore empty lines.
     valueAsArray.forEach(element => {
-
         if(element.trim().length !== 0)
             if (inputType == 'string') 
                 resultArray.push(`'${element.trim()}'`);
             else 
-                resultArray.push(element.trim());
-        
+                resultArray.push(element.trim());        
         })
+
+    // sort and remove duplicates with filter
+    let finalArray = resultArray.sort().filter((e, i, a) => e !== a[i - 1]);
+
 
     // variables used in the loop
     let counter = 0;
-    let length = resultArray.length;
+    let length = finalArray.length;
 
     // loop all of the array elements and print them 
-    resultArray.forEach(element => {
+    finalArray.forEach(element => {
         counter++;
 
         // Create elements needed to format with colors
