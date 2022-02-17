@@ -29,14 +29,16 @@ const formatData = function (copy) {
             valueAsArray = dataToFormat.value.trim().split(/\n| /); 
 
 
-    // loop the values if the array, treating them differently based on type (string or int)
+    // loop the values in the array, treating them differently based on type (string or int). Ignore empty lines.
     valueAsArray.forEach(element => {
-        if (inputType == 'string') {
-            resultArray.push(`'${element.trim()}'`);
-        } else {
-            resultArray.push(element.trim());
-        }
-    })
+
+        if(element.trim().length !== 0)
+            if (inputType == 'string') 
+                resultArray.push(`'${element.trim()}'`);
+            else 
+                resultArray.push(element.trim());
+        
+        })
 
     // variables used in the loop
     let counter = 0;
