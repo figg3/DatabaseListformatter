@@ -137,14 +137,19 @@ darkmode.addEventListener('click', function () {
 
 })
 
-// Set the darkmode
+// Set mode and a cookie that expires after one year
 function setMode(mode) { 
+
+        let date = new Date();
+        date.setDate(date.getDate()+365);
+        expires = "; expires="+date.toUTCString();
+
         document.body.className = `${mode}-mode`;
         textContainer.className = `container-${mode}`
         inputContainer.className = `container-light-${mode}`
         textArea.className = `${mode}-textbox`;
         result.className = `container-result-${mode}`
-        document.cookie = `mode=${mode}`; 
+        document.cookie = `mode=${mode}${expires}`; 
             if(mode == 'light')
                 darkmode.text = `dark mode`
             else
