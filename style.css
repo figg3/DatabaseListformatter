@@ -13,6 +13,10 @@ hr{
 
 }
 
+img{
+  max-width:100%;height:auto;
+}
+
 /* start dark mode */
 
 .dark-mode {
@@ -33,7 +37,6 @@ hr{
   color: rgb(220,221,222);
   border-radius: 5px;
   padding: 20px;
-  width: 100%;
   max-width: 800px;
 }
 
@@ -49,7 +52,6 @@ hr{
   border-radius: 5px;
   background-color: rgb(24, 25, 28);
   padding: 20px;
-  width: 100%;
   max-width: 800px;
   word-wrap: break-word;
   white-space: pre
@@ -94,19 +96,17 @@ a:active {
 .center-container {
   position: absolute;
   left: 50%;
-  /* top: 40%; */
-  /* transform: translate(-50%, -50%); */
   transform: translate(-50%);
   padding: 10px;
   max-width: 800px;
-  width: 800px;
+  width: 90%;
 }
 
 input[type="text"],
 select,
 textarea {
-  width: 97%;
-  padding: 12px;
+  display: block;
+  width: 100%;
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
@@ -148,7 +148,6 @@ button:hover {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
-  width: 100%;
   max-width: 800px;
 }
 
@@ -165,7 +164,6 @@ button:hover {
   border-radius: 5px;
   background-color: #6e7785;
   padding: 20px;
-  width: 100%;
   max-width: 800px;
   word-wrap: break-word;
   white-space: pre

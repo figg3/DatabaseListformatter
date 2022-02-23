@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 
 <body onload="setMode(checkCookieName('mode'))">
@@ -34,18 +33,18 @@
 
             <textarea id="text-format" placeholder="Paste or write here..."></textarea>
 
-            <br>
-            <b>Output: </b>
-            <input type="radio" name="input-typ" value="string" checked><label>Strings</label>
-            <input type="radio" name="input-typ" value="number"><label>Numbers</label>
+            <br><br>
+            <b>Output: </b><br>
+            <input type="radio" name="input-typ" value="string" id="input-string" checked><label for="input-string">Strings</label>
+            <input type="radio" name="input-typ" value="number" id="input-number"><label for="input-number">Numbers</label><br>
             <!-- Added to handle where to do the split -->
-            <b>Split with:</b>
-            <input type="radio" name="input-typ-lb" value="lb" checked><label>Linebreak</label>
-            <input type="radio" name="input-typ-lb" value="space"><label>Space</label>
-            <input type="radio" name="input-typ-lb" value="lbspace"><label>Space & linebreak</label>
-            <br>
-            <button id="buton-format">Format</button>
-            <button id="buton-format-copy">Format and copy</button>
+            <br><b>Split with:</b><br>
+            <input type="radio" name="input-typ-lb" value="lb" checked id="input-typ-lb-lb"><label for="input-typ-lb-lb">Linebreak</label>
+            <input type="radio" name="input-typ-lb" value="space" id="input-typ-lb-space"><label for="input-typ-lb-space">Space</label>
+            <input type="radio" name="input-typ-lb" value="lbspace" id="input-typ-lb-lbspace"><label for="input-typ-lb-lbspace">Space & linebreak</label>
+            <br><br>
+            <button id="buton-format">Preview</button>
+            <button id="buton-format-copy">Copy</button>
             <button id="buton-clear" class="btn-clear">Clear all</button>
 
         </div>
